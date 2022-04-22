@@ -6,7 +6,7 @@ const BookEdit = (props) => {
     const navigate = useNavigate();
     const [formData, updateFormData] = React.useState({
         name: "",
-        category: "NOVEL",
+        category: "",
         author: 0,
         availableCopies: 0
     })
@@ -49,7 +49,7 @@ const BookEdit = (props) => {
                             {props.categories.map((category, index) => {
                                     <option key={category} value={category}>{category}</option>
                                     if (props.book.category !== undefined && props.book.category === category)
-                                        return <option selected={props.book.category} key={category}
+                                        return <option selected={props.book.category.index} key={category}
                                                        value={category}>{category}</option>
                                     else
                                         return <option key={category}
