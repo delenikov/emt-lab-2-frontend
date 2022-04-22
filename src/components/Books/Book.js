@@ -8,16 +8,20 @@ const Book = (props) => {
 
     //React Hook (UseEffect)
     React.useEffect(() => {
-        setAvailableCopies(props.book.availableCopies);
+            setAvailableCopies(props.book.availableCopies);
         }, [props.book.availableCopies]
     )
 
     function markAsTakenState() {
-        setAvailableCopies(availableCopies - 1);
+        if (props.book.availableCopies > 0) {
+            setAvailableCopies(availableCopies - 1);
+        }
     }
 
     function markAsTakenDataBase() {
-        props.onMark(props.book.id);
+        if (props.book.availableCopies > 0) {
+            props.onMark(props.book.id);
+        }
     }
 
     return (
