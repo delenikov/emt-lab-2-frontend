@@ -103,7 +103,7 @@ class App extends Component {
                             <Route path="/categories" element={<Categories categories={this.state.categories}/>}/>
                             <Route path="/books/add" element={<BookAdd authors={this.state.authors} categories={this.state.categories} onAddBook={this.addBook}/>}/>
                             <Route path="/books/edit/:id" element={<BookEdit authors={this.state.authors} categories={this.state.categories} onEditBook={this.editBook} book={this.state.selectedBook}/>}/>
-                            <Route path={["/books","/"]} element={<Books books={this.state.books} onMark={this.markAsTaken} onDelete={this.deleteBook} onEdit={this.getBook}/>}/>
+                            <Route path="/(books|/)/" element={<Books books={this.state.books} onMark={this.markAsTaken} onDelete={this.deleteBook} onEdit={this.getBook}/>}/>
                         </Routes>
                     </div>
                 </main>
