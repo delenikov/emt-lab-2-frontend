@@ -16,12 +16,16 @@ const Book = (props) => {
         if (props.book.availableCopies > 0 && availableCopies > 0) {
             setAvailableCopies(availableCopies - 1);
         }
+        else
+            return;
     }
 
     function markAsTakenDataBase() {
         if (props.book.availableCopies > 0 && availableCopies > 0) {
             props.onMark(props.book.id);
         }
+        else
+            return;
     }
 
     return (
