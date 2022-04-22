@@ -13,13 +13,13 @@ const Book = (props) => {
     )
 
     function markAsTakenState() {
-        if (props.book.availableCopies > 0) {
+        if (props.book.availableCopies > 0 && availableCopies > 0) {
             setAvailableCopies(availableCopies - 1);
         }
     }
 
     function markAsTakenDataBase() {
-        if (props.book.availableCopies > 0) {
+        if (props.book.availableCopies > 0 && availableCopies > 0) {
             props.onMark(props.book.id);
         }
     }
